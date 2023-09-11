@@ -1,0 +1,11 @@
+install.packages("medicaldata")
+library(medicaldata)
+data(covid_testing)
+?covid_testing
+nrow(covid_testing)
+ncol(covid_testing)
+names(covid_testing)
+table(covid_testing$gender)
+sum(covid_testing$gender == "female" & covid_testing$age < 12)
+which(covid_testing$age >= 0 & covid_testing$age <= 11 & covid_testing$class == "outpatient" & covid_testing$result == "positive")
+quantile(covid_testing$age[covid_testing$gender == "male"], probs = c(0.5, 0.1, 0.9))
